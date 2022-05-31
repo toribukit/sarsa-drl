@@ -1,0 +1,10 @@
+{
+  "final_return_ma": 142.42500114440918,
+  "strength": 120.56500244140625,
+  "max_strength": 178.13999938964844,
+  "final_strength": 178.13999938964844,
+  "sample_efficiency": 1.874488543762709e-05,
+  "training_efficiency": 9.999392750614788e-05,
+  "stability": 0.7952028345316648,
+  "consistency": 0.15898461882706594
+}

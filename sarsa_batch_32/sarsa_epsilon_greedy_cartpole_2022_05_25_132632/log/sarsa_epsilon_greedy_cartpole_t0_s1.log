@@ -1,0 +1,176 @@
+[2022-05-25 13:26:33,987 PID:91776 INFO openai.py __init__] OpenAIEnv:
+- env_spec = {'max_frame': 100000, 'max_t': None, 'name': 'CartPole-v0'}
+- eval_frequency = 2000
+- log_frequency = 10000
+- frame_op = None
+- frame_op_len = None
+- image_downsize = (84, 84)
+- normalize_state = False
+- reward_scale = None
+- num_envs = 1
+- name = CartPole-v0
+- max_t = 200
+- max_frame = 100000
+- to_render = False
+- is_venv = False
+- clock_speed = 1
+- clock = <slm_lab.env.base.Clock object at 0x7f6361e58080>
+- done = False
+- total_reward = nan
+- u_env = <TrackReward<TimeLimit<CartPoleEnv<CartPole-v0>>>>
+- observation_space = Box(4,)
+- action_space = Discrete(2)
+- observable_dim = {'state': 4}
+- action_dim = 2
+- is_discrete = True
+[2022-05-25 13:26:33,992 PID:91776 INFO base.py end_init_nets] Initialized algorithm models for lab_mode: train
+[2022-05-25 13:26:33,996 PID:91776 INFO base.py __init__] SARSA:
+- agent = <slm_lab.agent.Agent object at 0x7f6288a6d390>
+- action_pdtype = Argmax
+- action_policy = <function epsilon_greedy at 0x7f6293d18f28>
+- explore_var_spec = {'end_step': 10000,
+ 'end_val': 0.05,
+ 'name': 'linear_decay',
+ 'start_step': 0,
+ 'start_val': 1.0}
+- gamma = 0.99
+- training_frequency = 32
+- to_train = 0
+- explore_var_scheduler = <slm_lab.agent.algorithm.policy_util.VarScheduler object at 0x7f6288a847f0>
+- net = MLPNet(
+  (model): Sequential(
+    (0): Linear(in_features=4, out_features=64, bias=True)
+    (1): SELU()
+  )
+  (model_tail): Sequential(
+    (0): Linear(in_features=64, out_features=2, bias=True)
+  )
+  (loss_fn): MSELoss()
+)
+- net_names = ['net']
+- optim = RMSprop (
+Parameter Group 0
+    alpha: 0.99
+    centered: False
+    eps: 1e-08
+    lr: 0.01
+    momentum: 0
+    weight_decay: 0
+)
+- lr_scheduler = <slm_lab.agent.net.net_util.NoOpLRScheduler object at 0x7f6288a84a20>
+- global_net = None
+[2022-05-25 13:26:33,997 PID:91776 INFO __init__.py __init__] Agent:
+- spec = {'cuda_offset': 0,
+ 'distributed': False,
+ 'eval_frequency': 2000,
+ 'experiment': 0,
+ 'experiment_ts': '2022_05_25_132632',
+ 'git_sha': '9102ff923d7a3e9c579edc18c6547cce94a7b77a',
+ 'graph_prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/graph/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'info_prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/info/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'log_prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/log/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'max_session': 4,
+ 'max_trial': 1,
+ 'model_prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/model/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'random_seed': 1653453793,
+ 'resume': False,
+ 'rigorous_eval': 0,
+ 'session': 1,
+ 'trial': 0}
+- agent_spec = {'algorithm': {'action_pdtype': 'Argmax',
+               'action_policy': 'epsilon_greedy',
+               'explore_var_spec': {'end_step': 10000,
+                                    'end_val': 0.05,
+                                    'name': 'linear_decay',
+                                    'start_step': 0,
+                                    'start_val': 1.0},
+               'gamma': 0.99,
+               'name': 'SARSA',
+               'training_frequency': 32},
+ 'memory': {'name': 'OnPolicyBatchReplay'},
+ 'name': 'SARSA',
+ 'net': {'clip_grad_val': 0.5,
+         'hid_layers': [64],
+         'hid_layers_activation': 'selu',
+         'loss_spec': {'name': 'MSELoss'},
+         'lr_scheduler_spec': None,
+         'optim_spec': {'lr': 0.01, 'name': 'RMSprop'},
+         'type': 'MLPNet'}}
+- name = SARSA
+- body = body: {
+  "agent": "<slm_lab.agent.Agent object at 0x7f6288a6d390>",
+  "env": "<slm_lab.env.openai.OpenAIEnv object at 0x7f629bc999b0>",
+  "a": 0,
+  "e": 0,
+  "b": 0,
+  "aeb": "(0, 0, 0)",
+  "explore_var": 1.0,
+  "entropy_coef": NaN,
+  "loss": NaN,
+  "mean_entropy": NaN,
+  "mean_grad_norm": NaN,
+  "best_total_reward_ma": -Infinity,
+  "total_reward_ma": NaN,
+  "train_df": "Empty DataFrame\nColumns: [epi, t, wall_t, opt_step, frame, fps, total_reward, total_reward_ma, loss, lr, explore_var, entropy_coef, entropy, grad_norm]\nIndex: []",
+  "eval_df": "Empty DataFrame\nColumns: [epi, t, wall_t, opt_step, frame, fps, total_reward, total_reward_ma, loss, lr, explore_var, entropy_coef, entropy, grad_norm]\nIndex: []",
+  "observation_space": "Box(4,)",
+  "action_space": "Discrete(2)",
+  "observable_dim": {
+    "state": 4
+  },
+  "state_dim": 4,
+  "action_dim": 2,
+  "is_discrete": true,
+  "action_type": "discrete",
+  "action_pdtype": "Argmax",
+  "ActionPD": "<class 'slm_lab.lib.distribution.Argmax'>",
+  "memory": "<slm_lab.agent.memory.onpolicy.OnPolicyBatchReplay object at 0x7f6288a6d518>"
+}
+- algorithm = <slm_lab.agent.algorithm.sarsa.SARSA object at 0x7f6288a84780>
+[2022-05-25 13:26:33,997 PID:91776 INFO logger.py info] Session:
+- spec = {'cuda_offset': 0,
+ 'distributed': False,
+ 'eval_frequency': 2000,
+ 'experiment': 0,
+ 'experiment_ts': '2022_05_25_132632',
+ 'git_sha': '9102ff923d7a3e9c579edc18c6547cce94a7b77a',
+ 'graph_prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/graph/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'info_prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/info/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'log_prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/log/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'max_session': 4,
+ 'max_trial': 1,
+ 'model_prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/model/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'prepath': 'data/sarsa_epsilon_greedy_cartpole_2022_05_25_132632/sarsa_epsilon_greedy_cartpole_t0_s1',
+ 'random_seed': 1653453793,
+ 'resume': False,
+ 'rigorous_eval': 0,
+ 'session': 1,
+ 'trial': 0}
+- index = 1
+- agent = <slm_lab.agent.Agent object at 0x7f6288a6d390>
+- env = <slm_lab.env.openai.OpenAIEnv object at 0x7f629bc999b0>
+- eval_env = <slm_lab.env.openai.OpenAIEnv object at 0x7f629bc999b0>
+[2022-05-25 13:26:33,997 PID:91776 INFO logger.py info] Running RL loop for trial 0 session 1
+[2022-05-25 13:26:34,001 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 0  t: 0  wall_t: 0  opt_step: 0  frame: 0  fps: 0  total_reward: nan  total_reward_ma: nan  loss: nan  lr: 0.01  explore_var: 1  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 13:29:01,038 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 260  t: 83  wall_t: 147  opt_step: 1872  frame: 10000  fps: 68.0272  total_reward: 50  total_reward_ma: 50  loss: 0.510809  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 13:33:34,050 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 370  t: 138  wall_t: 420  opt_step: 3750  frame: 20000  fps: 47.619  total_reward: 173  total_reward_ma: 111.5  loss: 0.0952386  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 13:33:34,060 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df metrics] final_return_ma: 111.5  strength: 89.64  max_strength: 151.14  final_strength: 151.14  sample_efficiency: 5.78481e-05  training_efficiency: 0.000308657  stability: 1
+[2022-05-25 13:37:15,852 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 468  t: 175  wall_t: 641  opt_step: 5622  frame: 30000  fps: 46.8019  total_reward: 200  total_reward_ma: 141  loss: 0.788345  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 13:37:15,862 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df metrics] final_return_ma: 141  strength: 119.14  max_strength: 178.14  final_strength: 178.14  sample_efficiency: 4.56298e-05  training_efficiency: 0.000243473  stability: 1
+[2022-05-25 13:41:49,870 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 526  t: 174  wall_t: 915  opt_step: 7500  frame: 40000  fps: 43.7158  total_reward: 200  total_reward_ma: 155.75  loss: 0.082876  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 13:41:49,890 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df metrics] final_return_ma: 155.75  strength: 133.89  max_strength: 178.14  final_strength: 178.14  sample_efficiency: 3.87678e-05  training_efficiency: 0.000206838  stability: 1
+[2022-05-25 13:46:12,266 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 576  t: 174  wall_t: 1178  opt_step: 9372  frame: 50000  fps: 42.4448  total_reward: 200  total_reward_ma: 164.6  loss: 0.0806755  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 13:46:12,285 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df metrics] final_return_ma: 164.6  strength: 142.74  max_strength: 178.14  final_strength: 178.14  sample_efficiency: 3.40834e-05  training_efficiency: 0.000181844  stability: 1
+[2022-05-25 13:50:09,237 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 634  t: 172  wall_t: 1415  opt_step: 11250  frame: 60000  fps: 42.4028  total_reward: 200  total_reward_ma: 170.5  loss: 0.186229  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 13:50:09,257 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df metrics] final_return_ma: 170.5  strength: 148.64  max_strength: 178.14  final_strength: 178.14  sample_efficiency: 3.06045e-05  training_efficiency: 0.000163277  stability: 1
+[2022-05-25 13:53:57,149 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 686  t: 129  wall_t: 1643  opt_step: 13122  frame: 70000  fps: 42.605  total_reward: 200  total_reward_ma: 174.714  loss: 0.0441447  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 13:53:57,158 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df metrics] final_return_ma: 174.714  strength: 152.854  max_strength: 178.14  final_strength: 178.14  sample_efficiency: 2.78876e-05  training_efficiency: 0.000148781  stability: 1
+[2022-05-25 13:58:16,779 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 736  t: 129  wall_t: 1902  opt_step: 15000  frame: 80000  fps: 42.061  total_reward: 200  total_reward_ma: 177.875  loss: 0.0814397  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 13:58:16,791 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df metrics] final_return_ma: 177.875  strength: 156.015  max_strength: 178.14  final_strength: 178.14  sample_efficiency: 2.56914e-05  training_efficiency: 0.000137061  stability: 1
+[2022-05-25 14:02:53,841 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 816  t: 74  wall_t: 2179  opt_step: 16872  frame: 90000  fps: 41.3033  total_reward: 200  total_reward_ma: 180.333  loss: 0.345762  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 14:02:53,850 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df metrics] final_return_ma: 180.333  strength: 158.473  max_strength: 178.14  final_strength: 178.14  sample_efficiency: 2.38703e-05  training_efficiency: 0.000127345  stability: 1
+[2022-05-25 14:04:59,864 PID:91776 INFO __init__.py log_summary] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df] epi: 872  t: 187  wall_t: 2305  opt_step: 18750  frame: 100000  fps: 43.3839  total_reward: 200  total_reward_ma: 182.3  loss: 0.456468  lr: 0.01  explore_var: 0.05  entropy_coef: nan  entropy: nan  grad_norm: nan
+[2022-05-25 14:04:59,873 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [train_df metrics] final_return_ma: 182.3  strength: 160.44  max_strength: 178.14  final_strength: 178.14  sample_efficiency: 2.23302e-05  training_efficiency: 0.000119127  stability: 1
+[2022-05-25 14:05:01,031 PID:91776 INFO __init__.py log_metrics] Trial 0 session 1 sarsa_epsilon_greedy_cartpole_t0_s1 [eval_df metrics] final_return_ma: 182.3  strength: 160.44  max_strength: 178.14  final_strength: 178.14  sample_efficiency: 2.23302e-05  training_efficiency: 0.000119127  stability: 1
+[2022-05-25 14:05:01,032 PID:91776 INFO logger.py info] Session 1 done
